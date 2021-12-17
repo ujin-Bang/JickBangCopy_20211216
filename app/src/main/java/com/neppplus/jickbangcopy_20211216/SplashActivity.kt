@@ -23,6 +23,9 @@ class SplashActivity : AppCompatActivity() {
             val myIntent = Intent(this, MainActivity::class.java)
             startActivity(myIntent)
 
+//            화면 이동 후에는 로딩화면 종료
+            finish()
+
         },2500)
 
 
