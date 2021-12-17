@@ -1,11 +1,32 @@
 package com.neppplus.jickbangcopy_20211216
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
+
+
+//      바로 넘어가네..  2.5 초 정도 이후에 넘어가게 해볼까? => Handler 클래스 활용
+
+        val myHandler = Handler(Looper.getMainLooper())
+
+        myHandler.postDelayed({
+
+//            이 중괄호 내부의 코드는 , 2.5초 후에 실행될 예정.
+
+            val myIntent = Intent(this, MainActivity::class.java)
+            startActivity(myIntent)
+
+        },2500)
+
+
+
+
     }
 }
