@@ -16,14 +16,14 @@ class RoomData(
         if (this.price < 10000) {
 
             val priceStr = NumberFormat.getNumberInstance(Locale.KOREA).format(this.price)
-            return priceStr
+            return "${ priceStr }만원"
         } else {
 
             val uk = this.price / 10000
             val rest = this.price % 10000
             val restCommaStr = NumberFormat.getNumberInstance(Locale.KOREA).format(rest)
 
-            val priceStr = "${uk}억${restCommaStr}"
+            val priceStr = "${uk}억${restCommaStr}만원"
 
             return priceStr
 
